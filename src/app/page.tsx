@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { UploadResumeButton } from '@/components/UploadResumeButton'
 
 const templates = [
   {
@@ -47,12 +48,18 @@ export default function Home() {
         <p className="text-lg text-gray-600 max-w-xl mb-8">
           Professional templates for students and freshers. Fill in your details, preview live, download PDF in seconds.
         </p>
-        <Link
-          href="/editor"
-          className="bg-indigo-600 text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
-        >
-          Start Building →
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          <Link
+            href="/editor"
+            className="bg-indigo-600 text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
+          >
+            Start Building →
+          </Link>
+          <UploadResumeButton
+            label="Check Score"
+            className="flex items-center gap-2 border border-indigo-300 text-indigo-700 px-6 py-3.5 rounded-xl text-base font-semibold hover:bg-indigo-50 transition-colors"
+          />
+        </div>
       </section>
 
       {/* Templates */}

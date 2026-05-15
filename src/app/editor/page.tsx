@@ -12,7 +12,7 @@ import { CertificationsSection } from '@/components/editor/CertificationsSection
 import { AchievementsSection } from '@/components/editor/AchievementsSection'
 import { TemplateSwitcher } from '@/components/editor/TemplateSwitcher'
 import { ResumePreview } from '@/components/editor/ResumePreview'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Link from 'next/link'
 
@@ -69,6 +69,9 @@ export default function EditorPage() {
             <Button variant="ghost" size="sm" className="text-xs text-muted-foreground" onClick={handleReset}>
               Reset
             </Button>
+            <Link href="/analyze" className={buttonVariants({ variant: 'outline', size: 'sm', className: 'text-xs' })}>
+              Analyze Score
+            </Link>
             <Button size="sm" className="text-xs bg-indigo-600 hover:bg-indigo-700" disabled={downloading} onClick={handleDownload}>
               {downloading ? 'Generating…' : 'Download PDF'}
             </Button>
